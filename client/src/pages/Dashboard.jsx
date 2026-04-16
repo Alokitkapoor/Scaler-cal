@@ -6,13 +6,13 @@ export default function Dashboard() {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/event-types')
+    fetch('https://scaler-cal.onrender.com/api/event-types')
       .then(res => res.json())
       .then(setEvents);
   }, []);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/api/event-types/${id}`, { method: 'DELETE' })
+    fetch(`https://scaler-cal.onrender.com/api/event-types/${id}`, { method: 'DELETE' })
       .then(res => res.json())
       .then(() => {
         setEvents(events.filter(e => e.id !== id));

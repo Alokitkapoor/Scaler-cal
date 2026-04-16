@@ -4,13 +4,13 @@ export default function Bookings() {
   const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/bookings')
+    fetch('https://scaler-cal.onrender.com/api/bookings')
       .then(res => res.json())
       .then(setBookings);
   }, []);
 
   const cancelBooking = (id) => {
-    fetch(`http://localhost:5000/api/bookings/${id}`, { method: 'DELETE' })
+    fetch(`https://scaler-cal.onrender.com/api/bookings/${id}`, { method: 'DELETE' })
       .then(() => setBookings(bookings.filter(b => b.id !== id)));
   };
 

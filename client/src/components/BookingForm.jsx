@@ -8,7 +8,7 @@ export default function BookingForm({ time, date, eventId }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch('http://localhost:5000/api/bookings', {
+    fetch('https://scaler-cal.onrender.com/api/bookings', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

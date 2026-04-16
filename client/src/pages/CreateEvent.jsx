@@ -12,7 +12,7 @@ export default function CreateEvent() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch('http://localhost:5000/api/event-types', {
+    fetch('https://scaler-cal.onrender.com/api/event-types', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(form),

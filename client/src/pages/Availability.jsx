@@ -8,7 +8,7 @@ export default function Availability() {
   const [timezone, setTimezone] = useState('UTC');
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/availability')
+    fetch('https://scaler-cal.onrender.com/api/availability')
       .then(res => res.json())
       .then(data => {
         setAvailability(data);
@@ -21,7 +21,7 @@ export default function Availability() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const dataWithTimezone = availability.map(a => ({ ...a, timezone }));
-    fetch('http://localhost:5000/api/availability', {
+    fetch('https://scaler-cal.onrender.com/api/availability', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ availability: dataWithTimezone }),

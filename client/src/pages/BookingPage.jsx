@@ -12,7 +12,7 @@ export default function BookingPage() {
   const [availableSlots, setAvailableSlots] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/event-types`)
+    fetch(`https://scaler-cal.onrender.com/api/event-types`)
       .then(res => res.json())
       .then(events => {
         const e = events.find(ev => ev.slug === slug);
@@ -22,7 +22,7 @@ export default function BookingPage() {
 
   useEffect(() => {
     if (date && event) {
-      fetch(`http://localhost:5000/api/bookings/available/${slug}/${date.format('YYYY-MM-DD')}`)
+      fetch(`https://scaler-cal.onrender.com/api/bookings/available/${slug}/${date.format('YYYY-MM-DD')}`)
         .then(res => res.json())
         .then(setAvailableSlots);
     }
